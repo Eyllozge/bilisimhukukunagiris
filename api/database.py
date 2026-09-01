@@ -6,6 +6,8 @@ load_dotenv()
 
 def get_connection():
     dsn = os.getenv("DATABASE_URL")
+    if not dsn:
+        raise RuntimeError("DATABASE_URL ortam değişkeni bulunamadı. Vercel > Settings > Environment Variables kısmını kontrol et.")
     if "sslmode" not in dsn:
         dsn += "?sslmode=require" if "?" not in dsn else "&sslmode=require"
     return psycopg2.connect(dsn)
