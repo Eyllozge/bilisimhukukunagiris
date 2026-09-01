@@ -1,0 +1,166 @@
+:root {
+    --law-dark: #2c3e50;
+    --law-cyan: #003440;
+    --law-light-pink: #F2BBB5;
+    --law-bg: #FFEEE4;
+    --success: #27ae60;
+    --error: #e74c3c;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif; /* Lora fontunu kullanabilmek için Google Fonts eklemeniz önerilir */
+    background-color: #76112C;
+    color: var(--law-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container-box {
+    background: #FFEEE4;
+    width: 95%;
+    max-width: 1300px;
+    min-height: 500px; /* Sabit height yerine min-height daha sağlıklıdır */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Eksik Olan Header ve Logo Sınıfları */
+.header {
+    margin-bottom: 25px;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.hidden { display: none !important; }
+
+/* Butonlar ve Inputlar */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+}
+
+.btn-main {
+    background: #76112C;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-main:hover { 
+    transform: scale(1.02);
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: var(--law-dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Oyun Alanı */
+.game-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.drag-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    min-height: 50px;
+}
+
+.card {
+    background: var(--law-dark);
+    color: white;
+    padding: 16px 18px;
+    border-radius: 8px;
+    cursor: grab;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card:active { cursor: grabbing; }
+
+.drop-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.target-box {
+    background: var(--white);
+    border: 2px dashed #dcdde1;
+    padding: 15px;
+    border-radius: 12px;
+    min-height: 100px;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.target-box p { margin: 5px 0 0 0; font-weight: bold; }
+.target-box small { color: #7f8c8d; }
+
+.target-box.highlight { border-color: var(--law-cyan); background: #f0fbff; }
+.target-box.correct { border: 2px solid var(--success); background: #e8f8f0; }
+.target-box.wrong { border: 2px solid var(--error); animation: shake 0.4s; }
+
+/* Sonuç Ekranı İkonu */
+#icon-container {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* Animasyonlar */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 700px) {
+    .drop-area { grid-template-columns: 1fr; }
+    .drag-area { grid-template-columns: 1fr; }
+    .container-box { padding: 20px; width: 95%; }
+}

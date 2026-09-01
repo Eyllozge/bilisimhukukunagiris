@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/skor-kaydet",
+      "destination": "/api/main.py"
+    },
+    {
+      "source": "/skorlar",
+      "destination": "/api/main.py"
+    }
+  ]
+}
