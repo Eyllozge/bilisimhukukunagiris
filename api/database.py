@@ -17,9 +17,11 @@ def create_table():
     try:
         cur = conn.cursor()
         cur.execute("""
-            CREATE TABLE IF NOT EXISTS katilimcilar (
+            CREATE TABLE IF NOT EXISTS scores (
                 id SERIAL PRIMARY KEY,
                 ad_soyad TEXT,
+                skor INTEGER,
+                toplam INTEGER,
                 tarih TEXT
             )
         """)
@@ -28,24 +30,24 @@ def create_table():
         cur.close()
         conn.close()
 
-def save_katilimci(ad_soyad, tarih):
+def save_score(ad_soyad, skor, toplam, tarih):
     conn = get_connection()
     try:
         cur = conn.cursor()
         cur.execute(
-            "INSERT INTO katilimcilar (ad_soyad, tarih) VALUES (%s, %s)",
-            (ad_soyad, tarih)
+            "INSERT INTO scores (ad_soyad, skor, toplam, tarih) VALUES (%s, %s, %s, %s)",
+            (ad_soyad, skor, toplam, tarih)
         )
         conn.commit()
     finally:
         cur.close()
         conn.close()
 
-def get_all_katilimcilar():
+def get_all_scores():
     conn = get_connection()
     try:
         cur = conn.cursor()
-        cur.execute("SELECT ad_soyad, tarih FROM katilimcilar")
+        cur.execute("SELECT ad_soyad, skor, toplam, tarih FROM scores")
         rows = cur.fetchall()
         return rows
     finally:
