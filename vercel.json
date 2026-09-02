@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/main.py": {
+      "includeFiles": "{index.html,style.css}"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",

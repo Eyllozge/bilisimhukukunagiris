@@ -36,4 +36,7 @@ def skorlar():
 # Yukarıdaki route'lar tanımlandıktan SONRA mount edilmeli;
 # aksi halde statik dosya servisi diğer route'ların önüne geçer.
 FRONTEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="static")
+try:
+    app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="static")
+except Exception as e:
+    print(f"Statik dosya mount hatası: {e}")
