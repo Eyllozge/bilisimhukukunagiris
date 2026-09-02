@@ -11,7 +11,7 @@
 
     <section id="login-screen" class="container-box">
         <div class="header">
-            <img src="logobuyuk (1).png" alt="Logo" class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
             <h2>Faz Ödevi: Bilişim Hukukuna Giriş</h2>
         </div>
         <div class="content">
@@ -49,15 +49,13 @@
     <script>
         // Madde ekleme alanı
         const questions = [
-            { id: 1, term: "Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgidir. Ad, TC kimlik numarası, e-posta adresi, IP adresi veya konum bilgisi bu kapsama girer. 6698 sayılı Kanun ile korunur.", desc: "Kişisel Veri" },
-            { id: 2, term: "Kişisel verilerin işleme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan gerçek veya tüzel kişidir. Örneğin verilerin hangi amaçla toplanacağına karar veren şirket bu sıfatı taşır.", desc: "Veri Sorumlusu" },
-            { id: 3, term: "Bilgisayar sistemlerine hukuka aykırı olarak girme, sistemi engelleme, bozma, verileri yok etme veya değiştirme gibi fiilleri kapsayan, Türk Ceza Kanunu'nda düzenlenmiş suç türüdür. Örneğin bir kişinin izinsiz olarak başkasının hesabına sızması bu kapsamdadır.", desc: "Bilişim Suçu" },
-            { id: 4, term: "Islak imzayla eşdeğer hukuki sonuç doğuran, elektronik veriye eklenen ve kimlik doğrulama amacıyla kullanılan güvenli elektronik veridir. Elektronik sözleşmelerin ve resmi yazışmaların güvenilirliğini sağlar.", desc: "Elektronik İmza" },
-            { id: 5, term: "İnternet ortamında yapılan yayınların, hukuka aykırı içerik barındırması halinde 5651 sayılı Kanun kapsamında idari veya adli kararla erişimin engellenmesi ya da içeriğin çıkarılması tedbiridir.", desc: "Erişim Engelleme" },
-            { id: 6, term: "İşlenen kişisel verilerin kanuni olmayan yollarla üçüncü kişiler tarafından ele geçirilmesi durumudur. Böyle bir durumda veri sorumlusu, Kişisel Verileri Koruma Kurulu'na ve ilgili kişilere en kısa sürede bildirim yapmakla yükümlüdür.", desc: "Veri İhlali" },
-            { id: 7, term: "Bir yazılımın kaynak kodunu, algoritmasını ve tasarımını hukuka aykırı biçimde çoğaltan, izinsiz kopyalayan veya değiştiren kişiye karşı Fikir ve Sanat Eserleri Kanunu kapsamında uygulanan korumadır. Bilgisayar programları eser olarak kabul edilir.", desc: "Yazılımın Fikri Mülkiyet Koruması" },
-            { id: 8, term: "Mal veya hizmetlerin internet üzerinden, fiziksel bir ortam olmaksızın alıcı ve satıcı arasında elektronik ortamda kurulan sözleşme ile sunulmasıdır. Mesafeli satış sözleşmeleri ve cayma hakkı bu alanı ilgilendirir.", desc: "Elektronik Ticaret" },
-        ];
+            { id: 1, term: "5651 Sayılı Kanun", desc: "İnternet ortamındaki yayınlar ve bu yayınlar nedeniyle işlenen bazı suçlarla mücadeleye ilişkin düzenlemeler içeren kanun" },
+            { id: 2, term: "Veri Sorumlusu", desc: "Kişisel verilerin işlenme amaç ve vasıtalarını belirleyen kişi/kuruluş" },
+            { id: 3, term: "İçerik Sağlayıcı", desc: "İnternet ortamında her türlü bilgi veya veriyi üreten, değiştiren veya sağlayan kişi" },
+            { id: 4, term: "Ransomware ", desc: "Dosyaları şifreleyerek veya sistemi kilitleyerek mağdurdan ödeme talep eden kötü amaçlı yazılım" },
+            { id: 5, term: "Adli Bilişim", desc: "Dijital cihaz ve sistemlerdeki verilerin hukuka uygun şekilde elde edilmesi, korunması, incelenmesi ve delil hâline getirilmesiyle ilgilenen alandır." },
+            { id: 6, term: "Legaltech", desc: "Hukuki hizmetlerin teknolojiyle desteklenmesi ve otomasyonu" },
+                    ];
 
         let userName = "";
         let score = 0;
